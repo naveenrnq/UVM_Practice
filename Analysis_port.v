@@ -23,3 +23,21 @@
 //
 //   Just like a broadcast to all the analysis port
 //
+//
+// Example
+
+class my_env extends uvm_env
+      get_ap_component g;  // whenever this port gets write this information is broadcasted to all the subscribers.
+      sub s1;  // subscriber 1
+      sub s2;  // subscriber 2
+   // ......
+   function void connect();
+	   g.ap.connect (s1.analysis_export);  // subscriber 1 analysis_export
+	   g.ap.connect (s2.analysis_export);  // subscriber 2 analysis_export
+	   //....
+   endfunction
+
+endclass
+
+
+// EXtension of TLM FIFO
