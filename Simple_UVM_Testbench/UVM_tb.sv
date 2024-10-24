@@ -1,7 +1,8 @@
 // Producer Consumer example that uses TLM FIFO to communicate
 //
 
- 'include "uvm_macros.svh"
+ `include "uvm_macros.svh"
+  import uvm_pkg::*;
 
  // Top module test
  
@@ -28,7 +29,7 @@
 		   for(int i=0; i<10; i++) begin
 			   randval = $random % 100; // will generate 10 random values in between 0 to 100
 			   #10;  		    // After every number provide a delay
-			   'uvm_info("producer", $sformatf("sending %4d", randval), UVM_MEDIUM)
+               `uvm_info("producer", $sformatf("sending %4d", randval), UVM_MEDIUM)
 			   put_port.put(randval);   // put randval to put_port
 		   end
 	   endtask
@@ -46,14 +47,14 @@
 	    endfunction
 
 
-	    task run_phase(uvm_phase phase)
+      task run_phase(uvm_phase phase);
 		    int val;
 		    forever
 		    begin
 			    get_port.get(val); // This is a blocking interface TLM method
 			    		       // It blocks until it has
 					       // something on this port.
-			    'uvm_info("consumer" , $sformatf("receiving %4d", val), UVM_MEDIUM)
+			    `uvm_info("consumer" , $sformatf("receiving %4d", val), UVM_MEDIUM)
 		    end
 
 	    endtask
@@ -105,7 +106,4 @@
     end
 
     endmodule // test
-
-
-
 
