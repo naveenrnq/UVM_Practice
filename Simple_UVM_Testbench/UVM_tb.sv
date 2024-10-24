@@ -42,7 +42,70 @@
 
 	    function new(string name, uvm_component p = null);
 		    super.new(name,p);
-		    get_port = new("get_port", this);
+		    get_port = new("get_port", this); // creating instance of this get_port
 	    endfunction
+
+
+	    task run_phase(uvm_phase phase)
+		    int val;
+		    forever
+		    begin
+			    get_port.get(val); // This is a blocking interface TLM method
+			    		       // It blocks until it has
+					       // something on this port.
+			    'uvm_info("consumer" , $sformatf("receiving %4d", val), UVM_MEDIUM)
+		    end
+
+	    endtask
+
+    endclass : consumer
+
+
+    // Class Environment
+    class env extends uvm_env;
+	    producer p;
+	    consumer c;
+	    uvm_tlm_fifo #(int) f;  // tlm fifo initiation present inside library
+
+	    // Initialization phase
+	    function new(string name = "env");
+		    super.new(name);
+		    p = new("producer", this); // Always we pass string to associate the name and a
+		    			       // pointer to associate the
+					       // name of the parent class
+		    c = new("consumer", this);
+		    f = new("fifo", this);
+		    $display("fifo put_export: %s", f.m_name);
+	    endfunction
+	    
+
+	    // Connection Phase
+	    function void connect_phase(uvm_phase phase);
+		    p.put_port.connect(f.put_export);  // Producer put port to input analysis FIFO
+		    c.get_port.connect(f.get_export);  // Consumer get port to output of TLM FIFO
+	    endfunction
+
+
+	    task run_phase(uvm_phase phase);
+		    phase.raise_objection(this);
+		    #1000;  // Thousand nanosecond 
+		    phase.drop_objection(this);
+	    endtask
+
+    endclass
+
+    // Main body of top_module test
+    env e;
+
+    initial 
+    begin
+	    e = new();
+	    run_test();
+	    // $finish;	    
+    end
+
+    endmodule // test
+
+
 
 
