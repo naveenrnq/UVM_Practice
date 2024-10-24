@@ -10,7 +10,7 @@ All the components that are not really tied to an interface like coverage monito
 
 There is also a coniguration components which configures a certain attributes or parameters for that specific ABP or SPI interface.
 
-It can be possible to have multiple env integrated in top-level env.
+It can be possible to have multiple env integrated in top-level env. 
 
 +-----------------------------+
 |           test              |
