@@ -21,6 +21,7 @@ Sequence: - Dynamic object with a sequence of transactions or a sequence of stim
 A sequence can consist of multiple sequence items.
 
 Architecture of UVM
+
 ![image](https://github.com/user-attachments/assets/8cec9763-4a75-4659-bc80-180068e31b42)
 
 
