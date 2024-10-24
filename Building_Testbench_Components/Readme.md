@@ -24,13 +24,28 @@ Architecture of UVM
 
 ![image](https://github.com/user-attachments/assets/8cec9763-4a75-4659-bc80-180068e31b42)
 
-# Simplified UVM inheritance diagram
+# Static vs Dynamic components
 
 => Two types Static and Dynamic.
 
 => Left side is static and right side is dynamic.
 
 ![image](https://github.com/user-attachments/assets/d533d6c2-caf0-4183-9bcd-59685a234104)
+
+Here we use directly Uvm_component
+
+![image](https://github.com/user-attachments/assets/49bb0e24-eff0-4bb4-95ec-484665f4562d)
+
+We will directly use the sequence. (Once in a while there can be a need of sequence_item)
+
+![image](https://github.com/user-attachments/assets/997ffc93-ab5b-425b-b79c-27312b745d43)
+
+# Avialable UVM Components
+
+![image](https://github.com/user-attachments/assets/bc9f23ac-efca-4d40-8654-417ea24077ea)
+
+
+
 
 
 
