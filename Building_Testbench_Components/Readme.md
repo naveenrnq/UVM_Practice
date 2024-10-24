@@ -25,7 +25,9 @@ Architecture of UVM
 ![image](https://github.com/user-attachments/assets/8cec9763-4a75-4659-bc80-180068e31b42)
 
 # Simplified UVM inheritance diagram
+
 => Two types Static and Dynamic.
+
 => Left side is static and right side is dynamic.
 
 ![image](https://github.com/user-attachments/assets/d533d6c2-caf0-4183-9bcd-59685a234104)
