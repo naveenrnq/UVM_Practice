@@ -11,10 +11,8 @@ All the components that are not really tied to an interface like coverage monito
 There is also a coniguration components which configures a certain attributes or parameters for that specific ABP or SPI interface.
 
 It can be possible to have multiple env integrated in top-level env. 
-+-----------------------------+ | test | | +-----------------------+ | | | env | | | | +-----------------+ | | | | | scoreboard | | | | | +-----------------+ | | | | | +-------------+ | | | | | | | configuration| | | | | | | | apb config | | | | | | | | spi config | | | | | | | +-------------+ | | | | | +-----------------+ | | | | | coverage monitor | | | | | +-----------------+ | | | | | +-------------+ | | | | | | | APB Agent | | | | | | | | +---------+ | | | | | | | | | monitor | | | | | | | | | +---------+ | | | | | | | | | SQR | | | | | | | | | +---------+ | | | | | | | | | driver | | | | | | | | | +---------+ | | | | | | | +-------------+ | | | | | +-----------------+ | | | | | +-------------+ | | | | | | | SPI Agent | | | | | | | | +---------+ | | | | | | | | | monitor | | | | | | | | | +---------+ | | | | | | | | | SQR | | | | | | | | | +---------+ | | | | | | | | | driver | | | | | | | | | +---------+ | | | | | | | +-------------+ | | | | | +-----------------+ | | | +-----------------------+ | +-----------------------------+ | | v +-----------------------------+ | DUT | | (SPI with APB interface) | +-----------------------------+
 
-
-
+![379915407-a366929c-f8e4-471b-a8d8-68c34a2c7dc6](https://github.com/user-attachments/assets/06d0809d-1baf-473c-a427-edf47692cabc)
 
 # Example to show how a typical UVM's stimulus is generated
 
