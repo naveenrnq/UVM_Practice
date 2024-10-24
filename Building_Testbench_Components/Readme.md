@@ -12,7 +12,53 @@ There is also a coniguration components which configures a certain attributes or
 
 It can be possible to have multiple env integrated in top-level env.
 
-![image](https://github.com/user-attachments/assets/a366929c-f8e4-471b-a8d8-68c34a2c7dc6)
++-----------------------------+
+|           test              |
+|  +-----------------------+  |
+|  |         env           |  |
+|  |  +-----------------+  |  |
+|  |  |  scoreboard     |  |  |
+|  |  +-----------------+  |  |
+|  |  |  +-------------+ |  |  |
+|  |  |  | configuration| |  |  |
+|  |  |  | apb config   | |  |  |
+|  |  |  | spi config   | |  |  |
+|  |  |  +-------------+ |  |  |
+|  |  +-----------------+  |  |
+|  |  | coverage monitor |  |  |
+|  |  +-----------------+  |  |
+|  |  |  +-------------+ |  |  |
+|  |  |  | APB Agent   | |  |  |
+|  |  |  | +---------+ | |  |  |
+|  |  |  | | monitor | | |  |  |
+|  |  |  | +---------+ | |  |  |
+|  |  |  | | SQR     | | |  |  |
+|  |  |  | +---------+ | |  |  |
+|  |  |  | | driver  | | |  |  |
+|  |  |  | +---------+ | |  |  |
+|  |  |  +-------------+ |  |  |
+|  |  +-----------------+  |  |
+|  |  |  +-------------+ |  |  |
+|  |  |  | SPI Agent   | |  |  |
+|  |  |  | +---------+ | |  |  |
+|  |  |  | | monitor | | |  |  |
+|  |  |  | +---------+ | |  |  |
+|  |  |  | | SQR     | | |  |  |
+|  |  |  | +---------+ | |  |  |
+|  |  |  | | driver  | | |  |  |
+|  |  |  | +---------+ | |  |  |
+|  |  |  +-------------+ |  |  |
+|  |  +-----------------+  |  |
+|  +-----------------------+  |
++-----------------------------+
+            |
+            |
+            v
++-----------------------------+
+|            DUT              |
+| (SPI with APB interface)    |
++-----------------------------+
+
 
 # Example to show how a typical UVM's stimulus is generated
 
